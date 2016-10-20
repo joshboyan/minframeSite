@@ -48,9 +48,6 @@ $(document).ready(function() {
                 $("a[href='" + theID + "']").addClass("active");
             } else {
                 $("a[href='" + theID + "']").removeClass("active");
-                $("a[href='" + theID + "']:after").css({
-                	background: '#000000'
-                });
             }
         }
     });

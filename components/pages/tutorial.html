@@ -30,6 +30,7 @@ description: This tutorial is a step by step, basic introduction to minframe, fr
 	<li><a href="#contactProcess">contact.php</a></li>
 	<li><a href="#robots">robots.txt</a></li>
 	<li><a href="#robots">humans.txt</a></li>
+	<li><a href="templating">DRY Templating</a></li>
 	<li><a href="#tutorialGrid">The Grid</a></li>
 	</ul>
 </aside>
@@ -81,7 +82,7 @@ description: This tutorial is a step by step, basic introduction to minframe, fr
 		<li>Change directories into the package you just installed.<br>
 			<code>cd minframe</code>
 		<li>Change the GitHub remote repository to one you own.<br>
-			<code>git remote set-url origin https://github.com/USERNAME/OTHERREPOSITORY.git</code></li>
+			<code>git remote set-url origin https://github.com/USERNAME/YOURREPO.git</code></li>
 		<li>Verify the remote URL has changed.<br>
 			<code>git remote -v</code></li>
 		<li>Install the node_module dependencies.<br>
@@ -203,7 +204,7 @@ description: This tutorial is a step by step, basic introduction to minframe, fr
 	</section>
 	<section id="dist">
 		<h3>builds/dist Directory</h3>
-		<p>This is minified and compressed files ready for FTP upload to your server are stored after you run <code>gulp&npsp;dist</code>. <code>gulp&npsp;dist</code> generates a sitemap for all the files you have created and stores it hear. There are also some additional files that you generally want to include on your server such as a <em>contact_process.php</em> and <em>.htaccess</em>.</p>
+		<p>This is minified and compressed files ready for FTP upload to your server are stored after you run <code>gulp&nbsp;dist</code>. <code>gulp&nbsp;dist</code> generates a sitemap for all the files you have created and stores it hear. There are also some additional files that you generally want to include on your server such as a <em>contact_process.php</em> and <em>.htaccess</em>.</p>
 	<section id="htaccess">
 		<h3>.htaccess</h3>
 			<p>The <em>.htaccess</em> file is a configuration file for Apache servers. The main thing it does is direct all 404 errors on our domain to <em>404.html</em>. It also does some pretty great things like enablig gzip to speed up our load times and changing our sites caching settings so repeat visitors will still have our assets on their machine speeding up their load time.</p>
@@ -224,7 +225,7 @@ description: This tutorial is a step by step, basic introduction to minframe, fr
 		
 		<div class="col6">
 			<h3>robots.txt</h3>
-			<p>Make sure to add your sitemaps URL here once you generate it!</p>
+			<p>Make sure to add your sitemaps URL here once you generate it! Check out <a href="http://www.robotstxt.org/">robotstxt.org</a> if you want more info on how to use this file.</p>
 		</div>
 		<div class="col6">
 			<h3>humans.txt</h3>
@@ -233,6 +234,40 @@ description: This tutorial is a step by step, basic introduction to minframe, fr
 	</section>
 	</section>
 </section><!--/#firstLook-->
+<section id="templating">
+	<h2><em>DRY</em> Reusable Templates</h2>
+	<p><em>D</em>on't <em>R</em>epeat <em>Y</em>ourself! Zurb's Panini flat file compiler allows us to create pages with consistent reusable layouts and partials. Only write your head, header, navigation and footer one time and reuse it across all of your pages. Only make edits once to change your entire site. If you need multiple layouts, just create them and call which one you would like to use in the Front Matter header on&nbsp;each&nbsp;page.</p>
+	<div class="col6">
+		<h4>Front Matter Markup</h4>
+		<p>Top of each unique page(&darr;index.html&darr;)</p>
+		<div>
+		<code>
+			---<br>
+			layout: default<br>
+			<strong>title</strong>: minframe | Mobile-first, Responsive, Light-weight Front-End Framework<br>
+			<strong>url:</strong> <br>
+			<strong>image:</strong> <br>
+			<strong>description:</strong> minframe is a modern HTML5, mobile-first framework built with Sass and Gulp on a 12 column responsive grid. The framework boasts all of the modern accessiblility features and tools developers use in builds but none of the style bloat.<br>
+			---
+		</code>
+		</div>
+	</div>
+	<div class="col6">
+		<h4>Template Head Tags</h4>
+		<p>Populated from page Front Matter markup (&darr;default.html&darr;)</p>
+		<div>
+		<code>
+			&lt;meta <strong>description</strong>="{{description}}" /><br>
+			&lt;meta property="og:<strong>title</strong>" content="{{title}}" /><br>
+			&lt;meta property="og:type" content="website" /><br>
+			&lt;meta property="og:<strong>url</strong>" content="{{url}}" /><br>
+			&lt;meta property="og:<strong>image</strong>" content="{{image}}" /><br>
+			&lt;meta property="og:<strong>description</strong>" content="{{description}}" /><br>
+			&lt;<strong>title></strong>{{title}} &lt;/title>
+		</code>
+		</div>
+	</div>
+</section><!--/#templating-->
 <section id="tutorialGrid">
 	<h2>The Grid</h2>
 	<p>The Minimal Frameworks Responsive Grid is a 12 column, mobile-first design that scales up to fit all viewports. All columns are 100% width by default until 768px. Above 768px each column is 1/12th of the viewport. So this means:</p>
