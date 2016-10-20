@@ -15,6 +15,9 @@ html {
             margin: 3.375 auto 0 auto;
             text-align: center;
         }
+        a {
+            text-decoration: none;
+        }
         h1 strong {
             font-size: 2.75rem;
         }
@@ -25,10 +28,7 @@ html {
             margin: 0 auto 1.5rem auto;
         }
         code {
-            font: .75rem/1.5 monospace;
-            background-color: $color4;
-            border: 2px solid $color3;
-            border-radius: 4px;
+            @include code;
         }
         header {
             overflow: hidden;
@@ -158,35 +158,7 @@ html {
                     }
                 }
             }
-            #templating {
-                em {
-                    text-decoration: underline;
-                }
-                h4 {
-                    margin-top: .75rem;
-                }
-                p {
-                    margin-bottom: 1.5rem;
-                }
-                code {
-                    border: none;
-                }
-                .col6 div {
-                    width: 90%;
-                    margin: 0 2.5%;
-                    padding: 2.5%;
-                    font: .75rem/1.5 monospace;
-                    background-color: $color4;
-                    border: 2px solid $color3;
-                    border-radius: 4px;
-                }
-                .col6:nth-of-type(1) div {
-                    margin-top: 3rem;
-                }
-                strong {
-                    color: red;
-                }
-            }
+            
             #getStarted {
                 li {
                     padding-bottom: 1rem;
@@ -203,11 +175,38 @@ html {
                 }
             }
         }
+        #templating {
+                em {
+                    text-decoration: underline;
+                }
+                h4 {
+                    margin-top: .75rem;
+                }
+                p {
+                    margin-bottom: 1.5rem;
+                }
+                code {
+                    border: none;
+                }
+                .col6 div {
+                    width: 90%;
+                    margin: 0 2.5%;
+                    padding: 2.5%;
+                    @include code;
+                }
+                .col6:nth-of-type(1) div {
+                    margin-top: 3rem;
+                }
+                strong {
+                    color: red;
+                }
+            }
         //tutorial.html styles
         aside {
             display: none;
         }
         .tutorialMain {
+            margin-top: 4rem;
             @include links;
             
         }
@@ -234,6 +233,11 @@ html {
             }
         }
     }
+    #gulpfile {
+        .col12 p {
+            text-align: center;
+        }
+    }
     #fileStructure {
         img {
             width: 100%;
@@ -242,6 +246,7 @@ html {
     #tutorialGrid {
         li {
             list-style-type: none;
+            text-align: center;
         }
         .col1,
         .col2,
@@ -262,6 +267,14 @@ html {
             }
         }
     }
+    #navigating {
+        p:nth-of-type(3) {
+            @include code;
+            code {
+                border: none;
+            }
+        }
+    }
     #wrapUp {}
     footer {
         position: relative;
@@ -270,6 +283,18 @@ html {
         background-color: $color2;
         padding-top: 2.25rem;
         z-index: 400;
+        a:hover {
+            color: $color5,
+        }
+        p {
+                    @include links;
+                    a {
+                        color: $color1;
+                        &:before {
+                            color: $color1;
+                        }
+                    }
+                }
         img {
             width: 80%;
             margin: 1.5rem 10%;
@@ -283,12 +308,7 @@ html {
                 padding-left: 5%;
             }
         }
-        .col2 {
-            a:after,
-            a:before {
-                display: none;
-            }
-        }
+        
         form {
             input,
             label,
@@ -312,6 +332,7 @@ html {
             }
         }
         #copy {
+            margin-bottom: 0;
             span {
                 margin-left: 10%;
             }
@@ -323,10 +344,6 @@ html {
                     margin: 1rem 0 0 10%;
                     font-size: 3.375rem;
                 }
-            }
-            a:after,
-            a:before {
-                display: none;
             }
         }
         .tabletFormPosition {
@@ -356,7 +373,12 @@ html {
                     }
                 }
             }
-            
+             #navigating {
+                p:nth-of-type(3) {
+                    width: 60%;
+                    margin: 0 20% 2rem 20%;
+                }
+            }
                 ol {
                     width: 60%;
                     margin: 0 20%;
@@ -366,6 +388,13 @@ html {
                 }
             
             footer {
+
+                .mobileFormPosition {
+                    display: none;
+                }
+                .tabletFormPosition {
+            display: inline;
+        }
                 img {
                     width: 100%;
                 }
@@ -416,13 +445,18 @@ html {
                 float: left;
                 margin-top: 3.5rem;
                 width: 15%;
-                font-size: 16px;
+                background-color: $color3;
+                font-size: .7rem;
                 font-weight: bold;
                 @include links;
 
                 a:before {
-                    background: $color1;
+                    background: $color3;
                 }
+                ul {
+                    margin-left: -10%;
+                }
+        
                 li {
                     list-style-type: none;
                     padding-left: 10%;
@@ -437,7 +471,10 @@ html {
                 li:nth-of-type(2),
                 li:nth-of-type(6),
                 li:nth-of-type(7),
-                li:nth-of-type(22) {
+                li:nth-of-type(22),
+                li:nth-of-type(23),
+                li:nth-of-type(24),
+                li:nth-of-type(25) {
                     padding-left: 0;
                 }
                 li:nth-of-type(18),
@@ -457,7 +494,6 @@ html {
         .tutorialMain {
             float: right;
             width: 85%;
-            margin-top: 4rem;
         }
         #getStartedTutorial {
             li {
@@ -477,4 +513,9 @@ html {
 }
 
 //large screen styles
-@media only screen and (min-width: 1140px) {}
+@media only screen and (min-width: 1400px) {
+    body {
+        max-width: 80%;
+        margin: 0 10%;
+    }
+}

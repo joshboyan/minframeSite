@@ -30,7 +30,9 @@ description: This tutorial is a step by step, basic introduction to minframe, fr
 	<li><a href="#contactProcess">contact.php</a></li>
 	<li><a href="#robots">robots.txt</a></li>
 	<li><a href="#robots">humans.txt</a></li>
-	<li><a href="templating">DRY Templating</a></li>
+	<li><a href="#templating">DRY Templating</a></li>
+	<li><a href="#linking">Linking Assets</a></li>
+	<li><a href="#navigating">Navigate Pages</a></li>
 	<li><a href="#tutorialGrid">The Grid</a></li>
 	</ul>
 </aside>
@@ -120,8 +122,14 @@ description: This tutorial is a step by step, basic introduction to minframe, fr
 		<div class="col6">
 	
 	<p><a href="http://gulpjs.com/">Gulp</a> is a javascript utililty used to automate tasks in yuo rdevelopment workflow. It is a plugin based system whare each plugin does one thing very well. There are many more plugins available and I suggest you Google <em>gulp-whatever you need to do</em> if you require a utility inaddition to what minframe provides.</p>
+	<p>The gulpfile.js is the set of instructions that is executed when you type the <em>gulp</em> command in your CLI. It controls the how each package we installed with NPM interfaces with your code.</p>
+</div>
+<div class="col6">
+		<img src="%img/gulpfile.jpg" alt="gulpfile.js file">
+	</div>
+	<div class="col12">
 
-	<p>The gulpfile.js is the set of instructions that is executed when you type the <em>gulp</em> command in your CLI. It controls the how each package we installed with NPM interfaces with your code. We do this in 5 steps:</p>
+	<p>There are 5 steps to using gulpfile.js</p>
 
 	<ol>
 		<li>We assign each package and their alias to a unique variable at the top of the page.</li>
@@ -133,9 +141,6 @@ description: This tutorial is a step by step, basic introduction to minframe, fr
 			gulp dist - Creates a finished package to upload to a server via FTP.</li>
 	</ol>
 	<p>You may want to change the page that initially loads with BrowserSync when working on pages other than index.html. to do this, search for the browse-sync gulp task and change the index to ./builds/dev/<em>fileYouWantToLoad</em>.html.</p>
-	</div>
-	<div class="col6">
-		<img src="%img/gulpfile.jpg" alt="gulpfile.js file">
 	</div>
 	</section>
 	<section id="package">
@@ -180,7 +185,7 @@ description: This tutorial is a step by step, basic introduction to minframe, fr
 		<div class="col6">
 			<p><a href="http://sass-lang.com/guide">Syntastically awesome style sheets</a>, or Sass is a CSS extension langauge that needs to be compiled into CSS to run in the browser. It allows you to assign variables, create mixins, add logic to your stylesheets and much more. Check out their documentation for specifics of the langauge.</p>
 
-			<p>minframe clears many browser default styles with <a href="https://necolas.github.io/normalize.css/">normalize.css</a> and the styles.scss file comes with nested markup allowing you to access elements without filling your HTML with helper classes. We include three common media queries for larger screens for your convenience. It also seperates out the grid, mixins and variables for clarity then imports them into a single style sheet while compiling. You can add additional stylesheets by following the <code>_filename.sccs</code> naming convention and adding <code>@import&npsp;"filename";</code> to styles.scss.</p>
+			<p>minframe clears many browser default styles with <a href="https://necolas.github.io/normalize.css/">normalize.css</a> and the styles.scss file comes with nested markup allowing you to access elements without filling your HTML with helper classes. We include three common media queries for larger screens for your convenience. It also seperates out the grid, mixins and variables for clarity then imports them into a single style sheet while compiling. You can add additional stylesheets by following the <code>_filename.sccs</code> naming convention and adding <code>@import&nbsp;"filename";</code> to styles.scss.</p>
 
 			<p>When you save any file in the <em>sass</em> directory all the scss files are concatenated and compiled into CSS3. If there is an error in your styles the CLI will show an error and tell you which line it occurs on. If everything is good, the auto-prefixer adds any browser prefixes your code needs going back 4 versions in all major browsers based on info from <a href="http://caniuse.com/">caniuse.com</a> and your browser will automatically update to reflect the changes.</p>
 
@@ -229,7 +234,7 @@ description: This tutorial is a step by step, basic introduction to minframe, fr
 		</div>
 		<div class="col6">
 			<h3>humans.txt</h3>
-			<p>Take credit for your work, give your team props and talk about the project!</p>
+			<p>Take credit for your work, give your team props and talk about the project! Check out <a href="http://humanstxt.org/">humanstxt.org</a> if you want more info on how to use this file.</p>
 		</div>		
 	</section>
 	</section>
@@ -268,6 +273,33 @@ description: This tutorial is a step by step, basic introduction to minframe, fr
 		</div>
 	</div>
 </section><!--/#templating-->
+<section id="linking">
+	<h2>Linking Assets</h2>
+	<p>Linking assets such as style sheets, images and exteranl Javascript files is a little different with minframe than you may be used to. You always need to use <code>&#37;</code> for the root of the file path.</p>
+	<p>For example:<br>
+	<code>&lt;img src="&#37;img/nodejs.jpg" alt="nodejs.org"&gt;</code></p>
+	<p><code>&lt;link href="&#37;css/styles.css" rel="stylesheet"&gt;</code></p>
+	<p><code>&lt;script src="&#37;js/scripts.js"&gt;&lt;/script&gt;</code></p>
+	<p>The reason we do this is the file compiler looks for <code>&#37;</code> throughout all the html files and replaces it with the appropriate file path. While the <code>gulp</code> command is running, the compiler replaces all <code>&#37;</code> with <code>./builds/dev/</code>. This allows Browsersync to fund the files in the build folder and display changes. <code>gulp dist</code> simply removes the <code>&#37;</code> so everything is linked properly on the server when you upload your distribution files.</p>
+</section>
+<section id="navigating">
+	<h3>Navigating Pages</h3>
+	<p>The Live Reload does not handle navigating between pages well due to the nature of the template compiler. Once you have a number of pages and want to check they are all linked correctly it is best to open your files in the browser the old fashioned way(double clicking in the file explorer) and not using the <code>gulp</code> command.</p>
+	<p>To open a different page in Live Reload with the <code>gulp</code> command you need to open <em>gulpfile.js</em> in your text editor and look for this code directly below the variables:</p>
+
+	<p><code>
+		gulp.task('browser-sync', function() {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;browserSync.init({<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;server: {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;baseDir: "./",<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index: "builds/dev/index.html"<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;});<br>
+});</code></p>
+
+	<p>Simply change <code>index.html</code> to the name of the file you would like BrowserSync to load for you.</p>
+	
+</section>
 <section id="tutorialGrid">
 	<h2>The Grid</h2>
 	<p>The Minimal Frameworks Responsive Grid is a 12 column, mobile-first design that scales up to fit all viewports. All columns are 100% width by default until 768px. Above 768px each column is 1/12th of the viewport. So this means:</p>
