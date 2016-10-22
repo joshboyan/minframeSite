@@ -15,6 +15,102 @@ html {
             margin: 3.375 auto 0 auto;
             text-align: center;
         }
+        .block1 {
+            width: 50%;
+            margin: 0 auto 1rem auto;
+            text-align: center;
+            background-color: $color3;
+            border: 1px solid $color6;
+            border-right: 2px solid $color5;
+            span {
+                float: left;
+                padding: 0 7px;
+                background-color: $color6;
+                border-left: 2px solid $color5;
+                border-right: 3px solid $color5;
+            }
+        }
+        .block2 {
+            width: 50%;
+            margin: 0 auto 1rem auto;
+            text-align: center;
+            background-color: $color3;
+            border-bottom: 3px solid $color6;
+            span {
+                float: left;
+                padding: 0 7px;
+                background-color: $color6;
+            }
+        }
+        .block3 {
+            width: 50%;
+            margin: 0 auto 1rem auto;
+            text-align: center;
+            background-color: $color3;
+            border-bottom: 3px solid $color6;
+            border-right: 3px solid $color6;
+            span {
+                float: left;
+                padding: 0 7px;
+                background-color: $color3;
+                border-top: 3px solid $color6;
+                border-left: 12px solid $color6;
+                border-right: 6px solid $color6;
+            }
+        }
+        .block4 {
+            width: 50%;
+            margin: 0 auto 1rem auto;
+            text-align: center;
+            background-color: $color3;
+            border-bottom: 3px solid $color6;
+            border-right: 6px solid $color6;
+            span {
+                float: left;
+                padding: 0 7px;
+                background-color: $color3;
+                border-top: 3px solid $color6;
+                border-left: 6px solid $color6;
+                border-right: 6px solid $color6;
+            }
+        }
+        .block5 {
+            width: 50%;
+            margin: 0 auto 1rem auto;
+            text-align: center;
+            background-color: $color3;            
+            span {
+                float: left;
+                padding: 0 7px;
+                background-color: $color4;                
+            }
+        }
+        .block6 {
+            width: 50%;
+            margin: 0 auto 1rem auto;
+            text-align: center;
+            background-color: $color3;
+            border-bottom: 3px solid $color5;            
+            span {
+                float: left;
+                padding: 0 7px;
+                background-color: $color4;
+                border-left: 6px solid $color5;                
+            }
+        }
+         .block7 {
+            width: 50%;
+            margin: 0 auto 1rem auto;
+            text-align: center;
+            background-color: $color3;
+            border: 3px solid $color6;
+            border-left: 15px solid $color6;            
+            span {
+                float: left;
+                padding: 0 7px;
+                border-right: 6px solid $color6;                
+            }
+        }
         a {
             text-decoration: none;
         }
