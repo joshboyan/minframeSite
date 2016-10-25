@@ -1,10 +1,20 @@
 <?php
 
-$servername = "localhost";
-$username = "joshboya";
-$password = "7A43any8Rs";
+require("xmlapi.php"); // this can be downlaoded from https://github.com/CpanelInc/xmlapi-php/blob/master/xmlapi.php
+$xmlapi = new xmlapi("joshboyan.com");   
+$xmlapi->set_port( 3306 );   
+$xmlapi->password_auth($opts['joshboya'],$opts['7A43any8Rs']);    
+$xmlapi->set_debug(0);//output actions in the error log 1 for true and 0 false
+
+$servername = "joshboyan.com";
+$username = 'joshboya';
+$password = '7A43any8Rs';
 $dbname = "formSubmissions";
+$databaseuser = 'josh';
+$databasepass = "mb2010";
 $tableName = "emails";
+$cpaneluser = $opts[$username];
+$cpanelpass = $opts[$password];
 
 $Referer = $_SERVER['HTTP_REFERER'];
 // Gets posted data from the HTML form fields and creates local variables. The items with the ' marks around them are the name values from the fields in the HTML form. Note, the first three variables are required for all email messages.
@@ -36,8 +46,14 @@ echo "<script type='text/javascript'>alert('It seems your email address is inval
 
 //Create Database if none exists
 try {
-    if(file_exists(/usr/local/cpanel/version)) {
-
+    //Special format for cpanel xmlapi
+    if(file_exists("/usr/local/cpanel/version")) {
+        //create database    
+$createdb = $xmlapi->api1_query($cpaneluser, "Mysql", "adddb", array($dbname));   
+//create user 
+$usr = $xmlapi->api1_query($cpaneluser, "Mysql", "adduser", array($cpaneluser, $cpanelpass));   
+//add user 
+$addusr = $xmlapi->api1_query($cpaneluser, 'Mysql', 'adduserdb', array('' . $dbname . '', '' . $cpaneluser . '', 'all'));    
     } else {
     $conn = new PDO("mysql:host=$servername", $username, $password);
     // set the PDO error mode to exception
@@ -55,7 +71,7 @@ catch(PDOException $e)
 
 //Create table if none exists
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $databaseuser, $databasepass);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -80,7 +96,7 @@ catch(PDOException $e)
 
 //Insert form data into database table
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $cpaneluser, $cpanelpass);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "INSERT INTO $tableName (name, email, subject, message)
