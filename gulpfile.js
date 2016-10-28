@@ -20,7 +20,7 @@ gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
             baseDir: "./",
-            index: "builds/dev/tutorial.html"
+            index: "builds/dev/index.html"
         }
     });
 });
