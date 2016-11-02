@@ -34,25 +34,30 @@ minframe is a modern HTML5, mobile-first framework built with Sass and Gulp on a
  2. Clone the repo to your local machine from your terminal.
  `git clone https://github.com/joshboyan/minframe.git`
 
- 3. Change directories into the repo you just cloned.
+ 3. Rename the folder.
+ `mv minframe PROJECTNAME`
+
+ 4. Change directories into the repo you just cloned.
  `cd minframe`
 
-
- 4. Change the GitHub remote repository to one you own.
+ 5. Change the GitHub remote repository to one you own.
  `git remote set-url origin https://github.com/USERNAME/OTHERREPOSITORY.git`
 
- 5. Verify the remote URL has changed.
+ 6. Verify the remote URL has changed.
  `git remote -v`
 
- 6. Install the node_module dependencies.
+ 7. Install the node_module dependencies.
  `npm install`
 
- 7. Start up the automated build and open chrome with Live Reload.
+ 8. Install gulp-cli globally.
+ `npm install -g gulp-cli`
+
+ 9. Start up the automated build and open chrome with Live Reload.
  `gulp`
 
- 8. Open _components_ folder with your favorite text editor and create HTML markup in _layouts_ and _pages_, add your Sass styles to _scss_ and JavaScript to _js_.
+ 10. Open _components_ folder with your favorite text editor and create HTML markup in _layouts_ and _pages_, add your Sass styles to _scss_ and JavaScript to _js_.
 
- 9. To stop automated workflow tools.
+ 11. To stop automated workflow tools.
  `ctr c OR cmd c`
 
  ##Tutorial

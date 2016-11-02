@@ -6,8 +6,10 @@ builds/dist/js/*
 builds/dist/img/**/*
 builds/dist/*.html
 builds/dist/sitemap.xml
-.DS_Store
+builds/**/img/*
+.idea/*
 node_modules
+.DS_Store
 .tmp
 .sass-cache
-builds/**/img/*
+
