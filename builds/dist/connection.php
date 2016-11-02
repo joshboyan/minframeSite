@@ -1,5 +1,11 @@
 <?php
 
+//SQL Need username and password
+//Run phpinfo to check differences in the server
+//Check remote host to add access to SQL from server
+//Call hostpond
+
+phpinfo();
 require("xmlapi.php"); // this can be downlaoded from https://github.com/CpanelInc/xmlapi-php/blob/master/xmlapi.php
 $xmlapi = new xmlapi("joshboyan.com");   
 $xmlapi->set_port( 3306 );   
