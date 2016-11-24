@@ -22,9 +22,9 @@
   <![endif]-->
 </head>
 <body>
-	<header>
+	<header role="banner">
 		<a href="#main" class="sr-only">Skip to content</a>
-		<nav>
+		<nav role="navigation">
 			<div class="navbar">
 			<a href="%index.html"><img src="%img/minframeLogoInverse.png" alt="minframe Logo"></a>
 			<i onClick="slideIn()" class="fa fa-bars"></i>
@@ -48,7 +48,7 @@
 
 {{> body}}
 
-	<footer>
+	<footer role="contentinfo">
 		<div class="col5">
 			<p>Hi! I'm Josh, a web designer and developer out of Portland, OR. I built minframe to help others build websites quickly and easily. It is under the MIT liscense so feel free to alter and customize it in any way. If you need something more complicated I would be happy to build it for you, just use the form <span class="mobileFormPosition">below </span><span class="tabletFormPosition">to the right </span>to tell me about your project. Any issues should be submitted to the&nbsp;<a href="https://github.com/joshboyan/minframe/issues" target="_blank">GitHub&nbsp;repo</a>.</p>
 		</div>
@@ -66,13 +66,15 @@
 				<input type="text" name="name" required>
 				<label for="email" id="email">Email</label>
 				<input type="text" name="email"  required>
-				<label for="subject">What's Up?</label>
+				<fieldset>
+					<legend>What's Up?</legend>
 				<select name="subject">
   				<option value="Build me a Site!">Build me a site!</option>
   				<option value="I have a suggestion.">I have a suggestion.</option>
   				<option value="I have a question.">I have a question.</option>
   				<option value="I found an issue.">I found an issue.</option>
 				</select>
+				</fieldset>
 				<label for="message">Tell me more...</label>
 				<textarea name="message" rows="5" required></textarea>
 				<input type="submit" name="submit" value="Submit">
