@@ -36,6 +36,7 @@ html {
         }
         a {
             text-decoration: none;
+            cursor: pointer;
         }
         h1 strong {
             font-size: 2.75rem;
@@ -53,74 +54,80 @@ html {
            
             overflow: hidden;
             nav {
+                top: 0;
                 .navbar {
                     position: fixed;
-                    z-index: 500;
-                    width: 100%;
                     top: 0;
-                    color: $color1;
-                    background-color: $color2;
-                    border-bottom: 1px solid $color1;
-                    @include links;
-                    img {
-                        padding-top: .75rem;
+                    background: $color1;
+                    height: 60px;
+                    border-bottom: 3px solid $color2;
+                    
+                    #mobileTrigger {
+                        float: right;
+                        padding: 12px 20px;
+                        color: $color2;
+                        font-size: 2rem;
+                        i {
+                            transition: .3s;
+                        }
                     }
                     ul {
                         display: none;
-                        float: right;
-                        width: 75%;
-                        li {
-                            display: inline;
-                            font-size: 1.25rem;
-                            padding: 0 1%;
-                            a {
-                                text-decoration: none;
-                                color: $color1;
-                                &:before,
-                                &:after {
-                                    display: inline;
-                                }
-                            }
-                            a:hover {
-                                color: $color5;
-                                transition: color 0s ease-out 0.22s;
-                            }
-                        }
                     }
                 }
-                .fa-bars {
-                    color: $color1;
-                    float: right;
-                    font-size: 2.25rem;
-                    padding: 1rem;
-                }
-                #mobileMenu {
+                div {
                     position: fixed;
+                    top: 0;
                     z-index: 1000;
-                    list-style-type: none;
-                    background-color: $color2;
                     width: 100%;
-                    height: 120vh;
-                    right: -120vw;
-                    top: -10vh;
-                    transition: 1s;
-                    li {
-                        color: $color1;
-                        font-size: 2.25rem;
-                        margin-left: 10vw;
-                        i {
-                            padding-top: 3.375rem;
-                            margin-left: 75vw;
-                        }
-                        a {
-                            text-decoration: none;
-                            color: $color1;
-                        }
-                        a:hover {
-                            color: $color5;
-                            transition: color 0s ease-out 0.22s;
-                        }
+                    img {
+                        position: relative;
+                        z-index: 1000;
+                        border-radius: 50%;
+                        box-shadow: 2px 2px 5px $color2;
+                        width: 20%;
                     }
+                }
+                @keyframes visible {
+                    from {
+                        opacity: 0;
+                    }
+                    to {
+                        opacity: 1;
+                    }
+                }
+                .visible {
+                    animation: visible 1s ease-in-out;
+                    animation-fill-mode: forwards;
+                }
+                .mobileNav {
+                    display: block;
+                    position: fixed;
+                    top: 0;
+                    z-index: 500;
+                    height: 600px;
+                    height: 110vh;
+                    width: 100%;
+                    margin-top: 60px;
+                    margin-left: -100%;
+                    background: $color1;
+                    font-size: 1.5rem;
+                    transition: .3s;
+                    @include links;
+                    a:before {
+                        background: $color1;
+                    }
+                    img {
+                        width: 4rem;
+                    }
+                }
+                .slideOut {
+                    margin-left: 0;
+                    transition: .3s;
+                }
+                .spinner {
+                    transform: rotate(360deg);
+                    transition: .3s;
                 }
             }
         }
@@ -456,15 +463,95 @@ html {
             }
             header {
                 nav {
-                    .fa-bars {
+                    .mobileNav {
                         display: none;
                     }
                     .navbar {
+                        display: inline;
+                        position: fixed;
+                        width: 100%;
+                        height: 75px;
+                        top: 0;
+                        @include links;
+                        #submenu a:before {
+                            background: $color1;
+                        }
+                        a {
+                            z-index: 1000;
+                        }
+                        span {
+                            display: none;
+                        }
                         ul {
-                            display: inline;
-                            width: 60%;
+                            display: block;
+                            li {
+                                font-size: 1rem;
+                            }
                         }
                     }
+                    div {
+                        position: relative;
+                        height: 75px;
+                        background: $color3;
+                        .logo {
+                            padding-right: 5px;
+                            &:after,
+                            &:before {
+                                background: transparent;
+                            }
+                        }
+                        img {
+                            width: 100px;
+                        }
+                        ul {
+                            position: fixed;
+                            width: 75%;
+                            padding-left: 25%;
+                            top: 10px;
+                            background: $color3;
+                            text-transform: uppercase;
+                            li {
+                                display: inline;
+                                padding-right: 5%;
+                                font-size: 1.25rem;
+                            }
+                        }
+                        @keyframes slideDown {
+                            from {
+                                top: -100px;
+                            }
+                            to {
+                                top: -35px;
+                            }
+                        }
+                        .slideDown {
+                            animation: slideDown .5s ease-in-out;
+                            animation-fill-mode: forwards;
+                        }
+                    }
+                    .slideUp {
+                        display: block;
+                        position: relative;
+                        float: left;
+                        z-index: 0;
+                        width: 100%;
+                        height: 50px;
+                        background: $color1;
+                        top: -100px;
+                        padding-top: 1rem;
+                        border-bottom: 1px solid $color3;
+                        transition: .3s;
+                        li {
+                            display: inline;
+                            padding-right: 5%;
+                            font-size: 1.25rem;
+                            text-transform: lowercase;
+                            &:first-of-type {
+                                margin-left: -5%;
+                            }
+                        }
+                    }
+                
                 }
             }
             main {

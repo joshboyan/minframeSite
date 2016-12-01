@@ -25,25 +25,40 @@
 	<header role="banner">
 		<a href="#main" class="sr-only">Skip to content</a>
 		<nav role="navigation">
-			<div class="navbar">
-			<a href="%index.html"><img src="%img/minframeLogoInverse.png" alt="minframe Logo"></a>
-			<i onClick="slideIn()" class="fa fa-bars"></i>
-			<ul id="menu">				
-				<li><a href="index.html#getStarted">Get Started</a></li>
-				<li><a href="%tutorial.html">Tutorial</a></li>
-				<li><a href="https://github.com/joshboyan/minframe" target="_blank">Github</a></li>
-				<li><a href="https://www.npmjs.com/~joshboyan" target="_blank">npm</a></li>
-				<li><a href="#contact">Contact</a></li>
-			</ul>
-			</div>
-			<ul id="mobileMenu">
-				<li><i onClick="slideOut()" class="fa fa-times"></i></li>
-				<li><a onClick="slideOut()" href="index.html#getStarted">Get Started</a></li>
-				<li><a href="%tutorial.html">Tutorial</a></li>
-				<li><a href="https://github.com/joshboyan/minframe" target="_blank">Github</a></li>
-				<li><a href="https://www.npmjs.com/~joshboyan" target="_blank">npm</a></li>
-				<li><a onClick="slideOut()" href="#contact">Contact</a></li>
-			</ul>
+			<div id="navbar" class="navbar">
+				<div>
+				<a class="logo" href="index.html"><img src="%img/logo.png" alt="Josh Boyan web design Logo"></a>
+				<span  id="mobileTrigger">Menu <i class="fa fa-bars"></i></span>
+				<ul>
+					<li><a tabindex="0">Portfolio</a></li>
+					<li><a tabindex="0" id="developers" class="closed">Developers</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+				</div>
+				<ul id="submenu" class="slideUp">
+					<li><a href="http://joshboyan.com/minframe/">minframe</a></li>
+					<li><a href="http://joshboyan.com/minframe/tutorial.html">mf tutorial</a></li>
+					<li><a href="https://github.com/joshboyan">github</a></li>
+					<li><a href="https://www.npmjs.com/~joshboyan">npm</a></li>
+					<li><a href="https://joshboyan.github.io/resume/">resume</a></li>
+				</ul>
+			</div><!--/.navbar-->
+			<div class="mobileNav">
+				<ul>
+					<li><a href="#">Portfolio</a></li>
+					<li><a href="#">Developers</a></li>
+					<li><a href="">minframe</a></li>
+					<li><a href="">mf tutorial</a></li>
+					<li><a href="">resume</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+				<ul>
+					<li><a href=""><i class="fa fa-github"></i> GitHub</a></li>
+					<li><a href=""><img src="%img/npm.png" alt="npm"></a></li>
+					<li><a href=""><i class="fa fa-codepen"></i> Codepen</a></li>
+					<li><a href=""><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+				</ul>
+			</div><!--/.mobileNav-->
 		</nav>
 
 {{> body}}
@@ -66,15 +81,13 @@
 				<input type="text" name="name" required>
 				<label for="email" id="email">Email</label>
 				<input type="text" name="email"  required>
-				<fieldset>
-					<legend>What's Up?</legend>
+				<label for="subject">What's Up?</label>
 				<select name="subject">
   				<option value="Build me a Site!">Build me a site!</option>
   				<option value="I have a suggestion.">I have a suggestion.</option>
   				<option value="I have a question.">I have a question.</option>
   				<option value="I found an issue.">I found an issue.</option>
 				</select>
-				</fieldset>
 				<label for="message">Tell me more...</label>
 				<textarea name="message" rows="5" required></textarea>
 				<input type="submit" name="submit" value="Submit">
