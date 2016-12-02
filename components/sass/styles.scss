@@ -51,16 +51,15 @@ html {
             @include code;
         }
         header {
-           
             overflow: hidden;
             nav {
                 top: 0;
                 .navbar {
                     position: fixed;
                     top: 0;
-                    background: $color1;
+                    background: $color3;
                     height: 60px;
-                    border-bottom: 3px solid $color2;
+                    border-bottom: 3px solid $color1;
                     
                     #mobileTrigger {
                         float: right;
@@ -142,7 +141,7 @@ html {
                     url('../img/Ethernet-600px.gif') no-repeat -650px center fixed;
                 background-size: cover;
                 font-weight: bold;
-                color: $color1;
+                color: $color3;
                 p {
                     background: rgba(0,0,0,0.7);
                     padding: 10px;
@@ -163,7 +162,7 @@ html {
                 }
                 hr {
                     width: 30%;
-                    border: 1px solid $color2;
+                    border: 1px solid $color1;
                     margin-bottom: 1rem;
                 }
                 p {
@@ -175,14 +174,14 @@ html {
                     position: relative;
                     width: 10%;
                     text-align: left;
-                    background-color: $color1;
+                    background-color: $color3;
                     padding: 1rem;
                     margin: 0 80% -3.75rem 10%;
                 }
                 .section {
                     margin-top: 2.25rem;
                     padding-top: 1.5rem;
-                    border: 1px solid $color5;
+                    border: 1px solid $color1;
                 }
                 .col1,
                 .col2,
@@ -356,17 +355,17 @@ html {
     footer {
         position: relative;
         overflow: hidden;
-        color: $color1;
-        background-color: $color2;
+        color: $color3;
+        background-color: $color1;
         padding-top: 2.25rem;
         z-index: 400;
         a:hover {
-            color: $color5,
+            color: $color2,
         }
         p {
                     @include links;
                     a {
-                        color: $color1;
+                        color: $color3;
                         &:before {
                             color: $color1;
                         }
@@ -427,7 +426,7 @@ html {
             display: none;
         }
         a {
-            color: $color1;
+            color: $color3;
             text-decoration: none;
         }
     }
@@ -485,7 +484,8 @@ html {
                         ul {
                             display: block;
                             li {
-                                font-size: 1rem;
+                                padding-top: .5rem;
+                                font-size: 1.25rem;
                             }
                         }
                     }
@@ -507,7 +507,7 @@ html {
                             position: fixed;
                             width: 75%;
                             padding-left: 25%;
-                            top: 10px;
+                            top: 5px;
                             background: $color3;
                             text-transform: uppercase;
                             li {
@@ -537,7 +537,7 @@ html {
                         width: 100%;
                         height: 50px;
                         background: $color1;
-                        top: -100px;
+                        top: -90px;
                         padding-top: 1rem;
                         border-bottom: 1px solid $color3;
                         transition: .3s;
@@ -628,12 +628,10 @@ html {
             header {
                 nav {
                     .navbar {
-                        ul {
-                            width: 70%;
-                            li {
-                                font-size: 1.5rem;
-                            }
-                        }
+                    
+                        li {
+                            font-size: 1.5rem;
+                        }                        
                     }
                 }
             }
@@ -642,12 +640,18 @@ html {
                 display: block;
                 position: fixed;
                 float: left;
-                margin-top: 3.5rem;
+                margin-top: 3.75rem;
                 width: 15%;
                 background-color: $color3;
                 font-size: .7rem;
                 font-weight: bold;
                 @include links;
+                a {
+                    color: $color1;
+                    &:hover {
+                        color: $color2;
+                    }
+                }
 
                 a:before {
                     background: $color3;
@@ -660,7 +664,7 @@ html {
                     list-style-type: none;
                     padding-left: 10%;
                     .active {
-                        color: $color5;
+                        color: $color2;
                         &:after {
                             right: 0;
                         }
@@ -715,7 +719,7 @@ html {
 
 //large screen styles
 @media only screen and (min-width: 1400px) {
-    body {
+    main {
         max-width: 80%;
         margin: 0 10%;
     }

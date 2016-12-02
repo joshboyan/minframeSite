@@ -1,10 +1,22 @@
-function slideIn() {
-	document.getElementById('mobileMenu').style.right="0";
-}
-
-function slideOut() {
-	document.getElementById('mobileMenu').style.right="-120vw";
-}
+//submenu slides down when user clicks developers link
+document.querySelector('.closed').onclick = () => { document.querySelector('#submenu').classList.toggle("slideDown");};
+//mobile menu animations
+document.querySelector('#mobileTrigger').onclick = function() { 
+    //mobile nav div slide into viewport
+    document.querySelector('.mobileNav').classList.toggle('slideOut');
+    //mobil nav trigger animations
+    document.querySelector('#mobileTrigger i').classList.toggle('spinner');
+    document.querySelector('#mobileTrigger i').classList.toggle('fa-bars')
+    document.querySelector('#mobileTrigger i').classList.toggle('fa-times');
+};
+document.querySelector('.mobileNav').onclick = function() {
+    //mobile nav div slide into viewport
+    document.querySelector('.mobileNav').classList.toggle('slideOut');
+    //mobil nav trigger animations
+    document.querySelector('#mobileTrigger i').classList.toggle('spinner');
+    document.querySelector('#mobileTrigger i').classList.toggle('fa-bars')
+    document.querySelector('#mobileTrigger i').classList.toggle('fa-times');
+};
 
 // The function actually applying the offset
 function offsetAnchor() {

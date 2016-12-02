@@ -19,7 +19,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: $color2;
+        background: $color3;
         height: 3px;
         -webkit-transition: right 0.3s ease-out;
         transition: right 0.3s ease-out;
@@ -31,13 +31,13 @@
         left: 0;
         right: 100%;
         bottom: 0;
-        background: $color5;
+        background: $color2;
         height: 3px;
         -webkit-transition: right 0.3s ease-out;
         transition: right 0.3s ease-out;
     }
     a:hover {
-        color: $color5;
+        color: $color2;
         transition: color 0s ease-out 0.22s;
     }
     a:hover:after,
