@@ -20,7 +20,7 @@ gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
             baseDir: "./",
-            index: "builds/dev/tutorial.html"
+            index: "builds/dev/index.html"
         }
     });
 });
@@ -117,7 +117,6 @@ gulp.task('sitemap', function () {
 });
 
 gulp.task('watch', function() {
-	gulp.watch(['./components/{layouts,partials,helpers,data}/**/*'], [panini.refresh]);
 	gulp.watch(jsSources, ['js']).on('change', browserSync.reload);
 	gulp.watch(sassSources, ['sass']).on('change', browserSync.reload);
   gulp.watch(htmlSources, ['panini']).on('change', browserSync.reload);

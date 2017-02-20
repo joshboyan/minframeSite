@@ -59,21 +59,10 @@ description: "minframe is a modern HTML5, mobile-first front-end framework built
             <h4>Git Bash Shell</h4>
             <blockquote><span>TL; DR</span> Firing up minframe</blockquote>
             <div class="col6">
-                <p><a href="https://git-scm.com/" target="_blank">command line interface</a>Download Git and its Bash shell</p> to get the files to your local machine and fire up the automated build tools. If you are not already using git and GitHub for version control you should be! This
-                <a href="https://www.udacity.com/course/how-to-use-git-and-github--ud775">Udacity tutorial</a> covers the basics so you can remotely store and share the revisions of projects you build.
+                <p><a href="https://git-scm.com/" target="_blank">Download Git and its Bash shell</a> to get the files to your local machine and fire up the automated build tools. If you are not already using git and GitHub for version control you should be! This <a href="https://www.udacity.com/course/how-to-use-git-and-github--ud775">Udacity tutorial</a> covers the basics so you can remotely store and share the revisions of projects you build.</p>
             </div>
             <div class="col6">
                 <img src="%img/git.jpg" alt="win-bash">
-            </div>
-        </section>
-        <section id="cli">
-            <h4>Command Line Basics</h4>
-            <blockquote><span>TL; DR</span> Navigating files in the shell</blockquote>
-            <div class="col6">
-                <p>We will not be doing anything beyond basic commands in the bash CLI. If you have never used the bash CLI before it would be beneficial to you to take this free course on Udacity.com: <a href="https://www.udacity.com/course/linux-command-line-basics--ud595" target="_blank">Linux Command Line Basics.</a></p>
-            </div>
-            <div class="col6">
-                <img src="%img/udacity.jpg" alt="Udacity.com">
             </div>
         </section>
     </section>
@@ -140,7 +129,7 @@ description: "minframe is a modern HTML5, mobile-first front-end framework built
             <h4>gulpfile.js</h4>
             <blockquote><span>TL; DR</span> Automating your tools</blockquote>
             <div class="col6">
-                <p><a href="http://gulpjs.com/" target="_blank">Gulp</a> is a javascript utililty used to automate tasks in yuo rdevelopment workflow. It is a plugin based system whare each plugin does one thing very well. There are many more plugins available and I suggest you Google <em>gulp-whatever you need to do</em> if you require a utility inaddition to what minframe provides.</p>
+                <p><a href="http://gulpjs.com/" target="_blank">Gulp</a> is a javascript utility used to automate tasks in yuo rdevelopment workflow. It is a plugin based system whare each plugin does one thing very well. There are many more plugins available and I suggest you Google <em>gulp-whatever you need to do</em> if you require a utility in addition to what minframe provides.</p>
                 <p>The gulpfile.js is the set of instructions that is executed when you type the <em>gulp</em> command in your CLI. It controls the how each package we installed with NPM interfaces with your code.</p>
             </div>
             <div class="col6">
@@ -210,12 +199,12 @@ description: "minframe is a modern HTML5, mobile-first front-end framework built
         <section id="img">
             <h4>img</h4>
             <blockquote><span>TL; DR</span> Where the pics live</blockquote>
-            <p>The <em>img</em> directory functions exactly like you would expect it to. Place images in the folder for use on the various pages and layouts. All images will go through automatic "lossless" compression to optimize them for speed without affecting quality. When referencing images in HTML, use the following file path: <code>src="&#37;img/<em>yourImageName</em>"</code>. When referencing images is <em>.scss</em> files use the normal file <code>src="../img/<em>yourImageName</em>"</code>. New images added to your project while gulp is running will not display until you restart gulp with <code>ctr c /OR/ cmd c</code> and then <code>gulp</code>.</p>
+            <p>The <em>img</em> directory functions exactly like you would expect it to. Place images in the folder for use on the various pages and layouts. All images will go through automatic "lossless" compression to optimize them for speed without affecting quality. When referencing images in <em>.scss</em> files use the normal file <code>src="../img/<em>yourImageName</em>"</code>. New images added to your project while gulp is running will not display until you restart gulp with <code>ctr c /OR/ cmd c</code> and then <code>gulp</code>.</p>
         </section>
         <section id="js">
             <h4>js</h4>
              <blockquote><span>TL; DR</span> Where the scripts live</blockquote>
-            <p>The <em>js</em> directory also operates a little differently than you may be used to. All of your scripts go here and you can divide them into as many files as make sense for what you are doing. If you are using <a href="http://es6-features.org/" target="_blank">ES6</a> when you hit save your scripts are first ran through the <a href="http://babeljs.io/" target="_blank">Babel compiler</a> to generate code that can run in the browser. Then all of your scripts are concantenated into one file to reduce server response time. The "use strict" command is added to the file. The file is then ran through <a href="http://jshint.com/" target="_blank">JSHint</a> to find any errors in your code. If one is found the process will stop and notify you exactly what and where the problem is in the CLI. If everything is good your browser will automatically update to reflect the changes. You may notice the concatenated file is referenced in the same way as the images on the default.html layout: <code>src="&#37;js/scripts.js</code>.</p>
+            <p>The <em>js</em> directory also operates a little differently than you may be used to. All of your scripts go here and you can divide them into as many files as make sense for what you are doing. If you are using <a href="http://es6-features.org/" target="_blank">ES6</a> when you hit save your scripts are first ran through the <a href="http://babeljs.io/" target="_blank">Babel compiler</a> to generate code that can run in the browser. Then all of your scripts are concatenated into one file to reduce server response time. The "use strict" command is added to the file. The file is then ran through <a href="http://jshint.com/" target="_blank">JSHint</a> to find any errors in your code. If one is found the process will stop and notify you exactly what and where the problem is in the CLI. Finally any npm requires <code>var module = require('module');</code> are bundled using <a href="http://browserify.org/">browserify</a>If everything is good your browser will automatically update to reflect the changes.</p>
         </section>
         <section id="dev">
             <h3>builds/dev Directory</h3>
