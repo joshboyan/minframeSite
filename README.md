@@ -1,67 +1,14 @@
-#**min**imal responsive front-end **frame**work
+#**minframe** Site
 
-minframe is a modern HTML5, mobile-first framework built with Sass and Gulp on a 12 column responsive grid. The framework boasts all of the modern accessiblility features and tools developers use in builds but none of the style bloat. The only boilerplate styling is normalize.scss, our 12 column responsive grid and basic HTML5 Sass nesting. Javascript is only required during the build process, not in the browser. 
+This site was built using the minframe CSS framework it is showcasing. It takes advantage of Sass for styling, handlebars for html templating and jQuery for DOM manipulation. It uses npm and gulp in the build process and PHP for form processing and validation. 
 
-##Automated Development Tools
+[View minframe repo](https://github.com/joshboyan/minframe)
 
--Gulp.js task runner to streamline and automate your workflow.
+This site was built using the tools minframe provides. Additional features include:
 
--Panini templating ensures you _don't repeat yourself_ by creating reusable head, header and footer layouts templates to combine with the pages unique body content.
-
--BrowserSync Live Reload and device testing built right in.
-
--Use the lastest ES6 syntax with Babeljs, automatically check quality with jshint then compile, concatenate and minify with uglifyjs.
-
--Responsive grid built on Sass preprocessor is automatically compiled, concataneted, minified and autprefixed along with your custom styles to support legacy browsers.
-
--Server side PHP5 form validation, sanitation and email processing.
-
--Automatically generate and update sitemaps.
-
--.htaccess file fine-tuned by the pros at Google.
-
--No redundant styles that have to overwritten.
-
--__Minimal file bloat, maximum development power.__
-
-##Get Started
-
-###Git CLI
-
- 1. Open your terminal and navigate to where you would like to dowlad the package.
- 'cd desktop'
-
- 2. Clone the repo to your local machine from your terminal.
- `git clone https://github.com/joshboyan/minframe.git`
-
- 3. Rename the folder.
- `mv minframe PROJECTNAME`
-
- 4. Change directories into the repo you just cloned.
- `cd minframe`
-
- 5. Change the GitHub remote repository to one you own.
- `git remote set-url origin https://github.com/USERNAME/OTHERREPOSITORY.git`
-
- 6. Verify the remote URL has changed.
- `git remote -v`
-
- 7. Install the node_module dependencies.
- `npm install`
-
- 8. Install gulp-cli globally.
- `npm install -g gulp-cli`
-
- 9. Start up the automated build and open chrome with Live Reload.
- `gulp`
-
- 10. Open _components_ folder with your favorite text editor and create HTML markup in _layouts_ and _pages_, add your Sass styles to _scss_ and JavaScript to _js_.
-
- 11. To stop automated workflow tools.
- `ctr c OR cmd c`
-
- ##Tutorial
- [minframe tutorial](http://joshboyan.com/minframe/tutorial.html)
+- Custom logo and favicon made in Illustrator
+- Scroll-aware side navigation
+- Custom form
 
 
 
