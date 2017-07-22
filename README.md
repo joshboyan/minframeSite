@@ -10,6 +10,6 @@ This site was built using the tools minframe provides. Additional features inclu
 - Scroll-aware side navigation
 - Custom form
 
-
+[View Site](https://joshboyan.com/minframe)
 
 
