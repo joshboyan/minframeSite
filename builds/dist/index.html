@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--Double curly braces load data from the top of pages -->
+	<meta description=minframe is a modern HTML5, mobile-first front-end framework built with Sass and Gulp on a 12 column responsive grid. The framework boasts all of the modern accessiblility features and tools developers use in builds but none of the style bloat.>
+	<meta property="og:title" content=minframe | Mobile-first, Responsive, Light-weight Front-End Framework />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content= />
+	<meta property="og:image" content= />
+	<meta property="og:description" content=minframe is a modern HTML5, mobile-first front-end framework built with Sass and Gulp on a 12 column responsive grid. The framework boasts all of the modern accessiblility features and tools developers use in builds but none of the style bloat. />
+	<title>minframe | Mobile-first, Responsive, Light-weight Front-End Framework</title>
+	<link rel="icon" type="image/png" href="img/favicon.png">
+	<link rel="icon" type="image/ico" href="img/logo.ico">
+	<link type="text/plain" rel="author" href="humans.txt" />
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+	<header role="banner">
+		<a href="#main" class="sr-only">Skip to content</a>
+		<nav role="navigation">
+			<div id="navbar" class="navbar">
+				<div>
+				<a class="logo" href="index.html"><img src="img/logo.png" alt="Josh Boyan web design Logo"></a>
+				<span  id="mobileTrigger">Menu <i class="fa fa-bars"></i></span>
+				<ul>
+					<li><a href="joshboyan.github.io">Portfolio</a></li>
+					<li><a tabindex="0" id="developers" class="closed">Developers</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+				</div>
+				<ul id="submenu" class="slideUp">
+					<li><a href="http://joshboyan.github.io/minframe/">minframe</a></li>
+					<li><a href="http://joshboyan.github.io/minframe/tutorial.html">mf tutorial</a></li>
+					<li><a href="https://github.com/joshboyan/minframe">github</a></li>
+					<li><a href="https://www.npmjs.com/~joshboyan">npm</a></li>
+					<!--<li><a href="https://joshboyan.com/resume/">resume</a></li>-->
+				</ul>
+			</div><!--/.navbar-->
+			<div class="mobileNav">
+				<ul>
+					<li><a href="joshboyan.github.io">Portfolio</a></li>
+					<li><a href="http://joshboyan.github.io/minframe/">minframe</a></li>
+					<li><a href="http://joshboyan.github.io/minframe/tutorial.html">mf tutorial</a></li>
+					<!--<li><a href="https://joshboyan.com/resume/">resume</a></li>-->
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+				<ul>
+					<li><a href=""><i class="fa fa-github"></i> GitHub</a></li>
+					<li><a href=""><img src="img/npm.png" alt="npm"></a></li>
+					<li><a href=""><i class="fa fa-codepen"></i> Codepen</a></li>
+					<li><a href=""><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+				</ul>
+			</div><!--/.mobileNav-->
+		</nav>
+
+	
+</header>
+<main role="main" id="main">
+	<section id="summary">
+<h1><strong>min</strong>imal responsive front-end <strong>frame</strong>work</h1>
+	<p>minframe is a modern HTML5, mobile-first front-end framework built with Sass and Gulp on a 12 column responsive grid. The framework boasts all of the modern accessiblility features and tools developers use in builds but none of the style bloat. The only boilerplate styling is normalize.scss, our 12 column responsive grid and basic HTML5 Sass nesting. Javascript is only required during the build process, not in&nbsp;the&nbsp;browser.</p>
+</section><!--/#summary-->
+<section id="automatedTools">
+<h2>Automated Development Tools</h2>
+<div class="col6">
+		<i class="fa fa-table"></i>
+		<hr>
+		<p>Responsive grid built on Sass preprocessor is automatically compiled, concataneted, minified and autprefixed along with your custom styles to support&nbsp;legacy&nbsp;browsers.</p>
+	</div>
+	<div class="col6">
+		<i class="fa fa-file-code-o"></i>
+		<hr>
+		<p>Panini templating ensures you <em><span>D</span>on't <span>R</span>epeat <span>Y</span>ourself</em> by creating reusable head, header and footer layouts templates to combine with the pages unique&nbsp;body&nbsp;content.</p>
+		
+	</div>
+	<div class="col6">
+		<i class="fa fa-desktop"></i>
+		<hr>
+		<p>BrowserSync Live Reload and device testing built&nbsp;right&nbsp;in.</p>
+	</div>
+	
+	<div class="col6">
+		<i class="fa fa-cogs"></i>
+		<hr>
+		<p>Gulp.js task runner to streamline and automate&nbsp;your&nbsp;workflow.</p>
+	</div>
+	
+	<div class="col6">
+		<i class="fa fa-paper-plane-o"></i>
+		<hr>
+		<p>Server side PHP5 form validation, sanitation and&nbsp;email&nbsp;processing.</p>
+	</div>
+	<div class="col6">
+		<i class="fa fa-check-square-o"></i>
+		<hr>
+		<p>Use the lastest ES6 syntax with Babeljs, automatically check quality with jsHint then compile, concatenate and minify&nbsp;with&nbsp;Uglifyjs.</p>
+	</div>
+	<div class="col6">
+		<i class="fa fa-map-o"></i>
+		<hr>
+		<p>Automatically generate and update&nbsp;sitemaps.</p>
+	</div>
+
+	<div class="col6">
+		<i class="fa fa-tachometer"></i>
+		<hr>
+		<p>.htaccess file fine-tuned by the pros&nbsp;at&nbsp;Google.</p>
+	</div>
+	<div class="col6">
+		<i class="fa fa-terminal"></i>
+		<hr>
+		<p>Stand on the shoulders of giants and use the npm code base in the client with browserify.</p>
+	</div>
+	<div class="section">
+		<h4>No redundant styles to&nbsp;overwrite.</h4>
+		<h3>Minimal File Bloat, Maximum Development&nbsp;Power.</h3>
+	</div>
+</section><!--/#automatedTools-->
+<section id="theGrid">
+	<h2>The Grid</h2>
+	<p>The Minimal Frameworks Responsive Grid is a 12 column, mobile-first design that scales up to fit all viewports. All columns are 100 width by default until 768px. It is built with Sass mixins eliminating much of the <code>div="class class class"</code> markup that polutes the HTML files of other frameworks. The <code>section</code> tag itself defines horizontal sections and clears floats much like <code>div class="row"</code> in Bootstrap. You also have the option of using <code>div class="section"</code> if that makes more semeantic sense. Columns only require one class <code>col#</code> where <code>#</code> is how many units out of twelve the column spans. Go ahead, resize&nbsp;your&nbsp;browser.</p>
+	<p>.section</p>
+	<div class="section">
+	<div class="col1">
+		<p>.col1</p>
+	</div>
+	<div class="col1">
+		<p>.col1</p>
+	</div>
+	<div class="col1">
+		<p>.col1</p>
+	</div>
+	<div class="col1">
+		<p>.col1</p>
+	</div>
+	<div class="col1">
+		<p>.col1</p>
+	</div>
+	<div class="col1">
+		<p>.col1</p>
+	</div>
+	<div class="col1">
+		<p>.col1</p>
+	</div>
+	<div class="col1">
+		<p>.col1</p>
+	</div>
+	<div class="col1">
+		<p>.col1</p>
+	</div>
+	<div class="col1">
+		<p>.col1</p>
+	</div>
+	<div class="col1">
+		<p>.col1</p>
+	</div>
+	<div class="col1">
+		<p>.col1</p>
+	</div>
+	<div class="col2">
+		<p>.col2</p>
+	</div>
+	<div class="col2">
+		<p>.col2</p>
+	</div>
+	<div class="col2">
+		<p>.col2</p>
+	</div>
+	<div class="col2">
+		<p>.col2</p>
+	</div>
+	<div class="col2">
+		<p>.col2</p>
+	</div>
+	<div class="col2">
+		<p>.col2</p>
+	</div>
+	<div class="col3">
+		<p>.col3</p>
+	</div>
+	<div class="col3">
+		<p>.col3</p>
+	</div>
+	<div class="col3">
+		<p>.col3</p>
+	</div>
+	<div class="col3">
+		<p>.col3</p>
+	</div>
+	<div class="col4">
+		<p>.col4</p>
+	</div>
+	<div class="col4">
+		<p>.col4</p>
+	</div>
+	<div class="col4">
+		<p>.col4</p>
+	</div>
+	<div class="col5">
+		<p>.col5</p>
+	</div>
+	<div class="col7">
+		<p>.col7</p>
+	</div>
+	<div class="col6">
+		<p>.col6</p>
+	</div>
+	<div class="col6">
+		<p>.col6</p>
+	</div>
+	<div class="col7">
+		<p>.col7</p>
+	</div>
+	<div class="col5">
+		<p>.col5</p>
+	</div>
+	<div class="col8">
+		<p>.col8</p>
+	</div>
+	<div class="col4">
+		<p>.col4</p>
+	</div><div class="col9">
+		<p>.col9</p>
+	</div>
+	<div class="col3">
+		<p>.col3</p>
+	</div>
+	<div class="col10">
+		<p>.col10</p>
+	</div>
+	<div class="col2">
+		<p>.col2</p>
+	</div>
+	<div class="col11">
+		<p>.col11</p>
+	</div>
+	<div class="col1">
+		<p>.col1</p>
+	</div>
+	<div class="col12 ">
+		<p>.col12</p>
+	</div>
+	<div>
+</section><!--/#theGrid-->
+<section id="templating">
+	<h2><em>DRY</em> Reusable Templates</h2>
+	<p><em>D</em>on't <em>R</em>epeat <em>Y</em>ourself! Zurb's Panini flat file compiler allows us to create pages with consistent reusable layouts and partials. Only write your head, header, navigation and footer one time and reuse it across all of your pages. Only make edits once to change your entire site. If you need multiple layouts, just create them and call which one you would like to use in the Front Matter header on&nbsp;each&nbsp;page.</p>
+	<div class="col6">
+		<h4>Front Matter Markup</h4>
+		<p>Top of each unique page(&darr;index.html&darr;)</p>
+		<div>
+		<code>
+			---<br>
+			layout: default<br>
+			<strong>title</strong>: minframe | Mobile-first, Responsive, Light-weight Front-End Framework<br>
+			<strong>url:</strong> <br>
+			<strong>image:</strong> <br>
+			<strong>description:</strong> minframe is a modern HTML5, mobile-first framework built with Sass and Gulp on a 12 column responsive grid. The framework boasts all of the modern accessiblility features and tools developers use in builds but none of the style bloat.<br>
+			---
+		</code>
+		</div>
+	</div>
+	<div class="col6">
+		<h4>Template Head Tags</h4>
+		<p>Populated from page Front Matter markup (&darr;default.html&darr;)</p>
+		<div>
+		<code>
+			&lt;meta <strong>description</strong>="minframe is a modern HTML5, mobile-first front-end framework built with Sass and Gulp on a 12 column responsive grid. The framework boasts all of the modern accessiblility features and tools developers use in builds but none of the style bloat." /><br>
+			&lt;meta property="og:<strong>title</strong>" content="minframe | Mobile-first, Responsive, Light-weight Front-End Framework" /><br>
+			&lt;meta property="og:type" content="website" /><br>
+			&lt;meta property="og:<strong>url</strong>" content="" /><br>
+			&lt;meta property="og:<strong>image</strong>" content="" /><br>
+			&lt;meta property="og:<strong>description</strong>" content="minframe is a modern HTML5, mobile-first front-end framework built with Sass and Gulp on a 12 column responsive grid. The framework boasts all of the modern accessiblility features and tools developers use in builds but none of the style bloat." /><br>
+			&lt;<strong>title></strong>minframe | Mobile-first, Responsive, Light-weight Front-End Framework &lt;/title>
+		</code>
+		</div>
+	</div>
+</section><!--/#templating-->
+<section id="getStarted">	
+	<h2>Get Started</h2>
+	<div class="col12">
+	<h4>Git CLI</h4>
+	<ol>
+		<li>Open your terminal and navigate to where you would like to download the package folder.<br>
+			<code>cd desktop</code>
+		</li>
+		<li>Download minframe.<br>
+			<code>git clone https://github.com/joshboyan/minframe.git</code>
+		</li>
+		<li>Rename the folder.<br>
+			<code>mv minframe <em>PROJECTNAME</em></code>
+		</li>
+		<li>Change directories into the package you just installed.<br>
+			<code>cd <em>PROJECTNAME</em></code>
+		</li>
+		<li>Change the GitHub remote repository to one you own.<br>
+			<code>git remote set-url origin https://github.com/<em>USERNAME/YOURREPO</em>.git</code>
+		</li>
+		<li>Verify the remote URL has changed.<br>
+			<code>git remote -v</code>
+		</li>
+		<li>Install the node_module dependencies.<br>
+			<code>npm install</code>
+		</li>
+		<li>Install gulp-cli globally<br>
+			<code>npm install -g gulp-cli</code>
+		</li>
+		<li>Start up the automated build and open chrome with Live Reload.<br>
+			<code>gulp</code><br>
+		</li>
+		<li>Open _components_ folder with your favorite text editor and create HTML markup in _layouts_ and _pages_, add your Sass styles to _scss_ and JavaScript to _js_.
+		</li>
+		<li>To stop the automated workflow tools, use:<br>
+			<code>ctr c /OR/ cmd c</code>
+		</li>
+	</ol>
+	</div>
+	<div class="col12">
+	<h4>Git GUI</h4>
+	<p>You can clone minframe using the <a href="https://github.com/joshboyan/minframe" target="_blank"><i class="fa fa-github"></i>GitHub GUI</a> but you will need to use your command line interface to work&nbsp;with&nbsp;minframe.</p>
+	<hr>
+	<p>Need a little more instruction to get started? Check out the <a href="tutorial.html">minframe&nbsp;front-end&nbsp;framework&nbsp;tutorial!</a></p>
+	</div>	
+</section><!--/#getStarted-->
+
+</main>
+
+
+
+	<footer role="contentinfo">
+		<div class="col5">
+			<p>Hi! I'm Josh, a web designer and developer out of Portland, OR. I built minframe to help others build websites quickly and easily. It is under the MIT liscense so feel free to alter and customize it in any way. If you need something more complicated I would be happy to build it for you, just use the form <span class="mobileFormPosition">below </span><span class="tabletFormPosition">to the right </span>to tell me about your project. Any issues should be submitted to the&nbsp;<a href="https://github.com/joshboyan/minframe/issues" target="_blank">GitHub&nbsp;repo</a>.</p>
+		</div>
+		<div class="col2">
+			<img src="img/profile.jpg" alt="Josh Boyan">
+			<ul>
+				<li><a href="https://www.linkedin.com/in/joshboyan" target="_blank"><i title="LinkedIn" class="fa fa-linkedin"></i></a></li>
+				<li><a href="https://github.com/joshboyan" target="_blank"><i title="GitHub" class="fa fa-github"></i></a></li>
+				<li><a href="http://codepen.io/joshboyan/" target="_blank"><i title="CodePen" class="fa fa-codepen"></i></a></li>
+			</ul>
+		</div>
+		<div id="contact" class="col5">
+			<form method="post" name="Form" action="contact.php">
+				<label for="name">Name</label>
+				<input type="text" name="name" required>
+				<label for="email" id="email">Email</label>
+				<input type="text" name="email"  required>
+				<label for="subject">What's Up?</label>
+				<select name="subject">
+  				<option value="Build me a Site!">Build me a site!</option>
+  				<option value="I have a suggestion.">I have a suggestion.</option>
+  				<option value="I have a question.">I have a question.</option>
+  				<option value="I found an issue.">I found an issue.</option>
+				</select>
+				<label for="message">Tell me more...</label>
+				<textarea name="message" rows="5" required></textarea>
+				<input type="submit" name="submit" value="Submit">
+			</form>
+		</div>
+		<section id="copy">
+			<span>&copy; Josh Boyan 2016</span>
+			<a href="#main"><i aria-label="Back to Top" class="fa fa-angle-double-up"></i></a>
+		</section><!--/#copy-->
+	</footer>
+	<script   src="http://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+	<script src="js/scripts.js"></script>
+</body>
+</html>
