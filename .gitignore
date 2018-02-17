@@ -1,12 +1,7 @@
 builds/dev/css/*
 builds/dev/js/*
 builds/dev/*.html
-builds/dist/css/*
-builds/dist/js/*
-builds/dist/img/**/*
-builds/dist/*.html
-builds/dist/sitemap.xml
-builds/**/img/*
+builds/dev/img/*
 .idea/*
 node_modules
 .DS_Store
